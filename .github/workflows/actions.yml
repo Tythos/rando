@@ -1,0 +1,23 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout repository contents
+        uses: actions/checkout@v2
+      -
+        name: Build image and push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: Tythos/rando/rando
+          tag_with_ref: true
