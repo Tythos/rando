@@ -21,4 +21,3 @@ jobs:
           registry: docker.pkg.github.com
           repository: Tythos/rando/rando
           tag_with_ref: true
-z
