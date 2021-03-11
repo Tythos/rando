@@ -3,7 +3,7 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs:
   build-docker-image:
@@ -21,3 +21,4 @@ jobs:
           registry: docker.pkg.github.com
           repository: Tythos/rando/rando
           tag_with_ref: true
+z
